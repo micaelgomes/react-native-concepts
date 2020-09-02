@@ -21,18 +21,23 @@ export default function App() {
       .then((res) => {
         setRepositories(res.data);
       })
-      .catch((err) => console.log("req err:", err));
-  }, [repositories]);
+      .catch((err) => console.log("err GET/repositories:", err));
+  }, []);
 
   async function handleLikeRepository(id) {
-    api
-      .post(`/repositories/${id}/like`)
-      .then((response) => {
-        console.log("then:", response.data)
+    const response = await api.post(`/repositories/${id}/like`);
 
-        return response.data
-      })
-      .catch((err) => console.error(err));
+    const repository = response.data;
+
+    const repositoriesUpdated = repositories.map((repo) => {
+      if (id === repo.id) {
+        return repository;
+      } else {
+        return repo;
+      }
+    });
+
+    setRepositories(repositoriesUpdated);
   }
 
   return (
