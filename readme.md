@@ -2,7 +2,7 @@
 
 ## :rocket: Sobre o desafio
 
-Esta aplicação irá fornecer uma interface para os repositórios do 1º defafio, como foi feito no de React.js, porém em Reacti-native.
+Esta aplicação irá fornecer uma interface para os repositórios do 1º defafio, como foi feito no de React.js, porém em React-native.
 
 ### Específicação dos testes
 
